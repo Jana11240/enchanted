@@ -28,11 +28,7 @@ Enchanted is a magical library where you can find all sorts of information on th
 - Provider Pattern Architecture was used.
 - Flutter Riverpod package for state management.
 - Http Package for API requests.
-- Flutter test package
-
-## Testing
-
-Unit tests were done using the flutter test package to ensure the app works as it should.
+- Flutter test package for widget testing.
 
 ## Documentation
 
