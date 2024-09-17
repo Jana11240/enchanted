@@ -1,8 +1,8 @@
 import 'package:enchanted/model/elixir_model.dart';
 import 'package:enchanted/model/house_model.dart';
 import 'package:enchanted/model/spell_model.dart';
-import 'package:enchanted/provider/providers/data.dart';
-import 'package:enchanted/provider/providers/filtered_elixirs.dart';
+import 'package:enchanted/controller/providers/data.dart';
+import 'package:enchanted/controller/providers/filtered_elixirs.dart';
 import 'package:enchanted/view/screens/elixir.dart';
 import 'package:enchanted/view/screens/elixir_filter.dart';
 import 'package:enchanted/view/screens/error.dart';

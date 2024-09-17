@@ -1,5 +1,5 @@
 import 'package:enchanted/model/elixir_model.dart';
-import 'package:enchanted/provider/providers/search_elixir.dart';
+import 'package:enchanted/controller/providers/search_elixir.dart';
 import 'package:enchanted/view/screens/elixir_detail.dart';
 import 'package:enchanted/view/widgets/elixir_item.dart';
 import 'package:flutter/material.dart';

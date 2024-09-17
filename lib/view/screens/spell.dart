@@ -1,5 +1,5 @@
 import 'package:enchanted/model/spell_model.dart';
-import 'package:enchanted/provider/providers/search_spell.dart';
+import 'package:enchanted/controller/providers/search_spell.dart';
 import 'package:enchanted/view/widgets/spell_category_tabs.dart';
 import 'package:enchanted/view/widgets/spell_item.dart';
 import 'package:flutter/material.dart';

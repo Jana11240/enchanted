@@ -1,7 +1,7 @@
 import 'package:enchanted/model/elixir_model.dart';
 import 'package:enchanted/model/house_model.dart';
 import 'package:enchanted/model/spell_model.dart';
-import 'package:enchanted/provider/api/wizard.dart';
+import 'package:enchanted/controller/api/wizard.dart';
 import 'package:riverpod/riverpod.dart';
 
 final houseProvider = Provider((ref) async {

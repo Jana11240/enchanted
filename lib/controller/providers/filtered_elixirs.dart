@@ -1,5 +1,5 @@
 import 'package:enchanted/model/elixir_model.dart';
-import 'package:enchanted/provider/providers/data.dart';
+import 'package:enchanted/controller/providers/data.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class FiltersNotifier extends StateNotifier<Map<Difficulty, bool>> {

@@ -1,5 +1,5 @@
 import 'package:enchanted/model/elixir_model.dart';
-import 'package:enchanted/provider/providers/filtered_elixirs.dart';
+import 'package:enchanted/controller/providers/filtered_elixirs.dart';
 import 'package:enchanted/view/styling.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
