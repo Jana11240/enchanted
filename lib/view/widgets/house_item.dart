@@ -19,9 +19,9 @@ class HouseItem extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       elevation: 2,
       child: Container(
-         decoration: const BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [kSecondaryColor, Color.fromARGB(255, 37, 9, 84)],
+            colors: [kPrimaryColor, Colors.white, kPrimaryColor],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -29,7 +29,8 @@ class HouseItem extends StatelessWidget {
         child: ListTile(
           contentPadding: const EdgeInsets.all(15),
           title: Padding(
-            padding: const EdgeInsets.all(30),
+            padding:
+                const EdgeInsets.only(top: 30, right: 30, left: 30, bottom: 10),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.asset(house.logo),
@@ -37,7 +38,7 @@ class HouseItem extends StatelessWidget {
           ),
           subtitle: Text(
             house.name,
-            style: kBodyText3.copyWith(color: Colors.white),
+            style: kBodyText3.copyWith(color: kSecondaryColor),
             textAlign: TextAlign.center,
           ),
         ),

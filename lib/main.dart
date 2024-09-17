@@ -75,7 +75,7 @@ class EnchantedApp extends StatelessWidget {
           unselectedItemColor: kSoftTextColor,
         ),
       ),
-      home: const HomeScreen(),
+      home: const ProviderScope(child: HomeScreen()),
     );
   }
 }

@@ -15,7 +15,7 @@ class StartScreen extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color.fromARGB(255, 56, 7, 104), kSecondaryColor],
+            colors: [kTertiaryColor, kSecondaryColor],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),

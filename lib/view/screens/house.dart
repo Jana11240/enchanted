@@ -20,26 +20,32 @@ class _HouseScreenState extends State<HouseScreen> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10),
-      child: GridView.builder(
-        itemCount: widget.houses.length,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 0.8,
-        ),
-        itemBuilder: (ctx, index) => InkWell(
-          onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => HouseDetail(
+      child: Stack(
+        children: [
+          Center(
+            child: GridView.builder(
+              itemCount: widget.houses.length,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 0.8,
+              ),
+              itemBuilder: (ctx, index) => InkWell(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => HouseDetail(
+                        house: widget.houses[index],
+                      ),
+                    ),
+                  );
+                },
+                child: HouseItem(
                   house: widget.houses[index],
                 ),
               ),
-            );
-          },
-          child: HouseItem(
-            house: widget.houses[index],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

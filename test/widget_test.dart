@@ -1,30 +1,56 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
+import 'package:enchanted/main.dart';
+import 'package:enchanted/model/house_model.dart';
+import 'package:enchanted/model/spell_model.dart';
+import 'package:enchanted/view/screens/home.dart';
+import 'package:enchanted/view/screens/start.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:enchanted/main.dart';
-
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+  testWidgets('Shows StartScreen on launch', (WidgetTester tester) async {
     await tester.pumpWidget(const EnchantedApp());
+    expect(find.byType(StartScreen), findsOneWidget);
+  });
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  testWidgets('Tap start button', (WidgetTester tester) async {
+    await tester.pumpWidget(const EnchantedApp());
+    await tester.tap(find.text('Start your adventure'));
+    await tester.pumpAndSettle();
+  });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+  testWidgets('Verify HouseScreen is displayed', (WidgetTester tester) async {
+    await tester.pumpWidget(const EnchantedApp());
+    await tester.tap(find.text('Start your adventure'));
+    await tester.pumpAndSettle();
+    await tester.pumpWidget(const EnchantedApp());
+    expect(find.byType(FutureBuilder<List<House>?>), findsOneWidget);
+  });
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+  testWidgets('Tap the Houses tab', (WidgetTester tester) async {
+    await tester.pumpWidget(const EnchantedApp());
+    await tester.tap(find.text('Start your adventure'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Houses'));
+    await tester.pumpAndSettle();
+    expect(find.byType(FutureBuilder<List<House>?>), findsOneWidget);
+  });
+
+  testWidgets('Tap the Spells tab', (WidgetTester tester) async {
+    await tester.pumpWidget(const EnchantedApp());
+    await tester.tap(find.text('Start your adventure'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Spells'));
+    await tester.pumpAndSettle();
+    expect(
+        find.byType(FutureBuilder<Map<String, List<Spell>>?>), findsOneWidget);
+  });
+
+  testWidgets('Tap the Elixirs tab', (WidgetTester tester) async {
+    await tester.pumpWidget(const EnchantedApp());
+    await tester.tap(find.text('Start your adventure'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Elixirs'));
+    await tester.pumpAndSettle();
+    expect(find.byType(ElixirScreenWithData), findsOneWidget);
   });
 }
