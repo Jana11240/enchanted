@@ -9,17 +9,17 @@ Enchanted is a magical library where you can find all sorts of information on th
 
 ## User Interface
 
-1. You are able to explore the Hogwarts Houses and learn about information such as their logo, founder, head members, house traits, element, colours, animal, ghost and the common room.
+1. Explore the Hogwarts Houses and learn about information such as their logo, founder, head members, house traits, element, colours, animal, ghost and the common room.
 
-2. You are able to view different spells filtered by its type and learn its name, effect, creator, light and of course, what you should say to perform the spell (if it is verbal).
+2. View different spells filtered by its type and learn its name, effect, creator, light and of course, what you should say to perform the spell (if it is verbal).
 
-3. You are able to search keywords (spell name, effect, incantation, creator and light) in order to locate a specific spell.
+3. Search keywords (spell name, effect, incantation, creator and light) in order to locate a specific spell.
 
-4. You are able to view different elixirs and learn information such as the name, effect, side effects, difficulty, characteristics, time, manufacturer, ingredients and inventors are also available to.
+4. View different elixirs and learn information such as the name, effect, side effects, difficulty, characteristics, time, manufacturer, ingredients and inventors are also available to.
 
-5. You can filter the elixirs by difficulty (unknown, advanced, moderate, beginner, ordinary wizarding level, one of a kind).
+5. Filter the elixirs by difficulty (unknown, advanced, moderate, beginner, ordinary wizarding level, one of a kind).
 
-6. You are able to search keywords (elixir name, effect, side effects, characteristics, time and manufacturer) in order to locate a specific elixir.
+6. Search keywords (elixir name, effect, side effects, characteristics, time and manufacturer) in order to locate a specific elixir.
 
 7. Lazy loading was implemented when displaying the elixirs.
 
