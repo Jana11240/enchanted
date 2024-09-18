@@ -19,7 +19,7 @@ class ElixirScreen extends ConsumerStatefulWidget {
 
 class _ElixirScreenState extends ConsumerState<ElixirScreen> {
   final ScrollController _scrollController = ScrollController();
-  int _currentMax = 12; 
+  int _currentMax = 12;
   List<Elixir> _displayedElixirs = [];
 
   @override
@@ -38,9 +38,17 @@ class _ElixirScreenState extends ConsumerState<ElixirScreen> {
   void _loadMoreElixirs() {
     setState(() {
       if (_currentMax < widget.elixirs.length) {
-        _currentMax += 12; 
+        _currentMax += 12;
         _displayedElixirs = widget.elixirs.take(_currentMax).toList();
       }
+    });
+  }
+
+  void _sort() {
+    setState(() {
+      _displayedElixirs.sort((a, b) {
+        return a.name!.toLowerCase().compareTo(b.name!.toLowerCase());
+      });
     });
   }
 
@@ -56,19 +64,26 @@ class _ElixirScreenState extends ConsumerState<ElixirScreen> {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Search keyword',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
+              child: Row(
+                children: [
+                  Flexible(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Search keyword',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        prefixIcon: const Icon(Icons.search),
+                      ),
+                      onChanged: (query) {
+                        ref
+                            .read(searchElixirQueryProvider.notifier)
+                            .setSearchQuery(query);
+                      },
+                    ),
                   ),
-                  prefixIcon: const Icon(Icons.search),
-                ),
-                onChanged: (query) {
-                  ref
-                      .read(searchElixirQueryProvider.notifier)
-                      .setSearchQuery(query);
-                },
+                  IconButton(onPressed: _sort, icon: const Icon(Icons.sort)),
+                ],
               ),
             ),
             const SizedBox(height: 10),
