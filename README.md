@@ -25,7 +25,7 @@ Enchanted is a magical library where you can find all sorts of information on th
 
 ## Architecture and Dependencies
 
-- Provider Pattern Architecture was used.
+- MVC (Model-View-Controller) Architecture Pattern was used.
 - Flutter Riverpod package for state management.
 - Http Package for API requests.
 - Flutter test package for widget testing.
